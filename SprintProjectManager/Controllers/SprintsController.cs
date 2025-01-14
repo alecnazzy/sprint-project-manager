@@ -20,10 +20,38 @@ namespace SprintProjectManager.Controllers
         }
 
         // GET: Sprints
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sprintStatus, string searchString)
         {
-            return View(await _context.Sprint.ToListAsync());
+            if (_context.Sprint == null)
+            {
+                return Problem("Entity set 'SprintProjectManagerContext.Sprint'  is null.");
+            }
+
+            // search status
+            IQueryable<string> statusQuery = from s in _context.Sprint
+                                             orderby s.Status
+                                             select s.Status;
+            var sprints = from s in _context.Sprint
+                         select s;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                sprints = sprints.Where(s => s.Name!.ToUpper().Contains(searchString.ToUpper()));
+            }
+            if (!string.IsNullOrEmpty(sprintStatus))
+            {
+                sprints = sprints.Where(x => x.Status == sprintStatus);
+            }
+
+            var sprintStatusVM = new SprintStatusViewModel
+            {
+                Statuses = new SelectList(await statusQuery.Distinct().ToListAsync()),
+                Sprints = await sprints.ToListAsync()
+            };
+
+            return View(sprintStatusVM);
         }
+
 
         // GET: Sprints/Details/5
         public async Task<IActionResult> Details(int? id)
