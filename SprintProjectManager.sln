@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprintProjectManager", "SprintProjectManager\SprintProjectManager.csproj", "{B79EFC0A-0636-4414-93A5-FD9DAEC098A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprintProjectManager.Tests", "SprintProjectManager.Tests\SprintProjectManager.Tests.csproj", "{4060E3B7-3D5A-450A-B9EA-363D77A9EAE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B79EFC0A-0636-4414-93A5-FD9DAEC098A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B79EFC0A-0636-4414-93A5-FD9DAEC098A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B79EFC0A-0636-4414-93A5-FD9DAEC098A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4060E3B7-3D5A-450A-B9EA-363D77A9EAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4060E3B7-3D5A-450A-B9EA-363D77A9EAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4060E3B7-3D5A-450A-B9EA-363D77A9EAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4060E3B7-3D5A-450A-B9EA-363D77A9EAE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

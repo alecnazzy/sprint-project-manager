@@ -15,7 +15,7 @@ namespace SprintProjectManager.Models
         [Display(Name = "Start Date")]
         [DataType(DataType.Date)]
         [Required]
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         [Display(Name = "End Date")]
         [DataType(DataType.Date)]
